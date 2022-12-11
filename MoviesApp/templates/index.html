@@ -1,0 +1,54 @@
+
+
+ {% extends 'layout/base.html' %}
+ {% block content %}
+ {% load django_bootstrap5 %}
+ <div class="container">
+   <div class="row">      
+    {% for item in movies %}
+  
+    <div class="col-md-2 mb-5">
+      <a href="{% url 'view_movie' item.id %}">
+      <div class="card">
+        <img class="card-img-top" src="{{item.image.url}}" alt="{{item.title}}" height="200px">
+        <div class="card-body">
+          <h4 class="card-title">{{item.title}}</h4>
+         </div>
+    </div>
+  </a>
+    </div>
+    {% endfor %}
+      
+   </div>
+  </div>
+ {% endblock content %}
+ 
+ 
+ {% block css %}
+  <style>
+    *{
+      background-color: black;
+    }
+    .container{
+      margin-top: 20px;
+    }
+
+    h4{
+      color: white;
+    }
+    .fw-bold{
+      width: 500px;
+      display: flex;
+      color: white;
+    }
+
+    a{
+      text-decoration: none;
+    }
+  </style>
+ {% endblock css %}
+ {% block js %}
+
+{% endblock %}
+
+  

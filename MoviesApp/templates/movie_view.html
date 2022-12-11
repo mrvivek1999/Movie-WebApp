@@ -1,0 +1,63 @@
+
+
+{% extends 'layout/base.html' %}
+
+
+    
+{% block content %}
+<div class="container vh-100">
+    
+    <div class="row align-items-center justify-content-center h-100 ">
+        <div class="col-md-6 col-lg-4" >
+            <img src="{{mov.image.url}}"  height="600" width="800px" alt="{{mov.title}}" style="border-radius: 30px; border: 5px solid #fff;">
+        </div>
+        
+        <div class="col-md-6 col-lg-8" style="text-align: right;">
+            <h1>{{mov.title}}</h1>
+            <div class="container-btns">
+                <a href="{% url 'add_movies' %}" class="btn btn-outline-primary">
+                  <i class="bi bi-cloud-arrow-up" style="background-color: green;"></i> Download
+                 </a>
+                </div>
+            
+        </div>
+    </div>
+    <div class="card-describ">
+        {{mov.descriptions|safe}}
+    </div>
+
+</div>
+    
+{% endblock content %}
+
+{% block css %}
+<style>
+    /*main{
+        /*background-image: url({{img.image.url}});*/
+        /*background-color: lightgray;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;*/
+    
+    img{
+        -box-showdow: 30px 10px 5px black;
+    }
+    .btn{
+      border: none;
+      background-color: green;
+      color: white;
+      font-size: 20px;
+      width: 250px;
+      margin-top: 5px;
+    }
+    p{
+        font-size: 20px;
+    }
+    h1{
+      width: 450px;
+      margin-left: 350px;
+    }
+</style>   
+{% endblock css %}
+
+    
